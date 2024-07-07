@@ -215,7 +215,7 @@ void LEDMatrix::drawOnMatrix(float factor){
 }
 
 /**
- * @brief Shows a 1-digit number on LED matrix (5x3)
+ * @brief Shows a 1-digit number on LED matrix (4x3)
  * 
  * @param xpos x of left top corner of digit
  * @param ypos y of left top corner of digit
@@ -224,7 +224,7 @@ void LEDMatrix::drawOnMatrix(float factor){
  */
 void LEDMatrix::printNumber(uint8_t xpos, uint8_t ypos, uint8_t number, uint32_t color)
 {
-  for(int y=ypos, i = 0; y < (ypos+5); y++, i++){
+  for(int y=ypos, i = 0; y < (ypos+4); y++, i++){
     for(int x=xpos, k = 2; x < (xpos+3); x++, k--){
       if((numbers_font[number][i] >> k) & 0x1){
         gridAddPixel(x, y, color);
